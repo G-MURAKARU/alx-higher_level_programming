@@ -6,7 +6,7 @@ while i < 8:
         if i == j:
             j += 1
             continue
-        print(f"{i}{j}, ", end="")
+        print("{}{}".format(i, j), end=", ")
         j += 1
     i += 1
-print(f"89")
+print("{}".format(89))
