@@ -17,14 +17,15 @@ int check_cycle(listint_t *list)
 	listint_t *current;
 	listint_t **array_pointers;
 
-	array_pointers = malloc(sizeof(listint_t*) * n);
+	array_pointers = malloc(sizeof(listint_t *) * n);
 	if (!array_pointers)
 		return (-1);
 
 	current = list;
 	while (current)
 	{
-		for (counter = 0; counter < n && (array_pointers[counter] != NULL); counter++)
+		for (counter = 0; counter < n && (array_pointers[counter] != NULL);
+				counter++)
 		{
 			if (current == array_pointers[counter])
 				return (1);
@@ -37,7 +38,7 @@ int check_cycle(listint_t *list)
 			continue;
 		}
 		temp = array_pointers;
-		array_pointers = malloc(sizeof(listint_t*) * ++n);
+		array_pointers = malloc(sizeof(listint_t *) * ++n);
 		for (temp_counter = 0; temp_counter < array_counter; temp_counter++)
 			array_pointers[temp_counter] = temp[temp_counter];
 		free(temp);
