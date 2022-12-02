@@ -3,6 +3,11 @@ import sys
 from calculator_1 import add, sub, mul, div
 
 
+def not_found():
+    print("Unknown operator. Available operators: +, -, * and /")
+    sys.exit(1)
+
+
 def main():
     lt = len(sys.argv)
 
@@ -14,13 +19,10 @@ def main():
     a, operator, b = sys.argv[1:]
     a, b = int(a), int(b)
 
-    for sign, func in calc.items():
-        if sign == operator:
-            print("{} {} {} = {}".format(a, operator, b, func(a, b)))
-            break
-    else:
-        print("Unknown operator. Available operators: +, -, * and /")
-        sys.exit(1)
+    result = calc.get(operator, not_found)
+    if result == not_found:
+        result()
+    print("{} {} {} = {}".format(a, operator, b, result(a, b)))
 
 
 if __name__ == "__main__":

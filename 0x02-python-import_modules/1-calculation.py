@@ -5,10 +5,9 @@ from calculator_1 import add, sub, mul, div
 def main():
     a = 10
     b = 5
-    funcs = [add, sub, mul, div]
-    signs = ['+', '-', '*', '/']
+    calc = {'+': add, '-': sub, '*': mul, '/': div}
 
-    for func, sign in zip(funcs, signs):
+    for sign, func in calc.items():
         print("{} {} {} = {}".format(a, sign, b, func(a, b)))
 
 
