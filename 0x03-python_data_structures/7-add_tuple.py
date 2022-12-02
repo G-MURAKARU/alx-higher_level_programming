@@ -20,6 +20,3 @@ def add_tuple(tuple_a=(), tuple_b=()):
     sum2 = a[1] + b[1]
 
     return (sum1, sum2)
-
-if __name__ == "__main__":
-    add_tuple(tuple_a=(), tuple_b=())
