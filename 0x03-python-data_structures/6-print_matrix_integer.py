@@ -10,3 +10,4 @@ def print_matrix_integer(matrix=[[]]):
         for element in range(lt):
             end = " " if element < (lt - 1) else "\n"
             print("{}".format(row[element]), end=end)
+    return
