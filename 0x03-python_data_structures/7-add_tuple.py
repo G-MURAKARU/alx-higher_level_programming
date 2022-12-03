@@ -2,21 +2,23 @@
 
 
 def add_tuple(tuple_a=(), tuple_b=()):
-    a = list(tuple_a)
-    b = list(tuple_b)
+    sum1, sum2 = 0, 0
 
-    if len(a) > 2:
-        a = a[:2]
-    else:
-        while len(a) < 2:
-            a.append(0)
-    if len(b) > 2:
-        b = b[:2]
-    else:
-        while len(b) < 2:
-            b.append(0)
+    for index in range(2):
+        my_sum = 0
+        try:
+            my_sum += tuple_a[index]
+        except IndexError:
+            pass
 
-    sum1 = a[0] + b[0]
-    sum2 = a[1] + b[1]
+        try:
+            my_sum += tuple_b[index]
+        except IndexError:
+            pass
+
+        if index == 0:
+            sum1 = my_sum
+            continue
+        sum2 = my_sum
 
     return (sum1, sum2)
