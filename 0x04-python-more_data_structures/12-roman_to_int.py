@@ -1,7 +1,8 @@
 #!/usr/bin/python3
 def roman_to_int(roman_string):
-    if roman_string is None or roman_string == '' or type(roman_string) is not str:
+    if roman_string is None or type(roman_string) is not str:
         return 0
+
     symbols = {'I': 1,
                'V': 5,
                'X': 10,
@@ -14,9 +15,9 @@ def roman_to_int(roman_string):
     arabic = 0
 
     while counter < len(roman_string):
-        first = symbols[roman_list[counter]]
+        first = symbols[roman_string[counter]]
         try:
-            second = symbols[roman_list[counter+1]]
+            second = symbols[roman_string[counter+1]]
             if second > first:
                 second -= first
                 arabic += second
