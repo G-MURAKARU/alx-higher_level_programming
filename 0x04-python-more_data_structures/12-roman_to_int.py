@@ -1,5 +1,7 @@
 #!/usr/bin/python3
 def roman_to_int(roman_string):
+    if roman_string is None or roman_string == '' or type(roman_string) is not str:
+        return 0
     symbols = {'I': 1,
                'V': 5,
                'X': 10,
@@ -8,12 +10,10 @@ def roman_to_int(roman_string):
                'D': 500,
                'M': 1000}
 
-    roman_list = list(roman_string)
-
     counter = 0
     arabic = 0
 
-    while counter < len(roman_list):
+    while counter < len(roman_string):
         first = symbols[roman_list[counter]]
         try:
             second = symbols[roman_list[counter+1]]
