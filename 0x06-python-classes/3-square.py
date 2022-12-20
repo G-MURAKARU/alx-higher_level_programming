@@ -33,4 +33,4 @@ class Square:
         """
         area finds the area of a square
         """
-        pass
+        return self.__size**2
