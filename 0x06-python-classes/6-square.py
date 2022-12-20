@@ -9,12 +9,14 @@ class Square:
     This is a class that defines a square
     """
 
-    def __init__(self, size: int = 0) -> None:
+    def __init__(self, size: int = 0, position: tuple[int, int] = (0, 0)) -> None:
         """
         __init__ Initialises a new Square instance
 
         Args:
             size (int, optional): the square's sides' length. Defaults to 0.
+            position (tuple[int, int], optional): square's coordinates.
+                                                  Defaults to (0, 0).
 
         Raises:
             TypeError: raised if the passed size argument is not an integer
@@ -28,6 +30,7 @@ class Square:
             raise ValueError("size must be >= 0")
 
         self.__size: int = size
+        self.__position: tuple[int, int] = position
 
     @property
     def size(self):
@@ -60,6 +63,32 @@ class Square:
 
         self.__size = custom_size
 
+    @property
+    def position(self):
+        """
+        position is a getter for the private position instance attribute
+
+        Returns:
+            position: the square's (x, y) position
+        """
+        return self.__position
+
+    @position.setter
+    def position(self, value):
+        """
+        position is a setter for the square's (x, y) position
+
+        Args:
+            value (_type_): a tuple of 2 integers
+
+        Raises:
+            TypeError: raised if value is not a tuple of integers
+        """
+        if not isinstance(value, tuple[int, int]):
+            raise TypeError("position must be a tuple of 2 positive integers")
+
+        self.__position = value
+
     def area(self):
         """
         area finds the area of a square instance
@@ -72,7 +101,11 @@ class Square:
         """
 
         def _my_print():
+            for _ in range(self.__position[1]):
+                print()
             for _ in range(self.__size):
+                for _ in range(self.__position[0]):
+                    print("_", end="")
                 for _ in range(self.__size):
                     print("#", end="")
                 print()
