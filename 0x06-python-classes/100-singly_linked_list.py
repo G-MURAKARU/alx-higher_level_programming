@@ -77,6 +77,7 @@ class Node:
         Raises:
             TypeError: if next_node is not a Node object
         """
+
         if not isinstance(next_node, Node) and next_node is not None:
             raise TypeError("next_node must be a Node object")
 
@@ -102,6 +103,7 @@ class SinglyLinkedList:
         Args:
             value (int): data stored in the new node object
         """
+
         if self.__head is None:
             self.__head = Node(data=value)
             return
@@ -128,6 +130,7 @@ class SinglyLinkedList:
         Returns:
             str: print() representation
         """
+
         values = []
         current: Node = self.__head
         while current is not None:
