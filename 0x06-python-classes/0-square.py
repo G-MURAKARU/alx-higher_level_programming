@@ -1,5 +1,3 @@
 #!/usr/bin/python3
 class Square:
-    """
-    _summary_
-    """
+    """This is a class that defines a square"""
