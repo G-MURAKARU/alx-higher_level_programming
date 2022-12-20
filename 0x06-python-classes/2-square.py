@@ -14,7 +14,7 @@ class Square:
         __init__ Initialises a new Square instance
 
         Args:
-            size (int, optional): the length of the sides of the square. Defaults to 0.
+            size (int, optional): the square's sides' length. Defaults to 0.
 
         Raises:
             TypeError: raised when the passed size argument is not an integer
