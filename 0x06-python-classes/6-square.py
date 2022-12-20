@@ -9,7 +9,7 @@ class Square:
     This is a class that defines a square
     """
 
-    def __init__(self, size: int = 0, position: tuple[int, int] = (0, 0)) -> None:
+    def __init__(self, size: int = 0, position=(0, 0)) -> None:
         """
         __init__ Initialises a new Square instance
 
@@ -39,7 +39,7 @@ class Square:
         ):
             raise TypeError("position must be a tuple of 2 positive integers")
 
-        self.__position: tuple[int, int] = position
+        self.__position = position
 
     @property
     def size(self):
