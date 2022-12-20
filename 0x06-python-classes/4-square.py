@@ -17,8 +17,8 @@ class Square:
             size (int, optional): the square's sides' length. Defaults to 0.
 
         Raises:
-            TypeError: raised when the passed size argument is not an integer
-            ValueError: raised when the passed size argument is less than 0
+            TypeError: raised if the passed size argument is not an integer
+            ValueError: raised if the passed size argument is less than 0
         """
 
         if not isinstance(size, int):
@@ -46,7 +46,18 @@ class Square:
 
         Args:
             custom_size (int): size to assign to size instance attribute
+
+        Raises:
+            TypeError: raised if the passed custom_size argument is not an int
+            ValueError: raised if the passed custom_size argument < 0
         """
+
+        if not isinstance(custom_size, int):
+            raise TypeError("custom_size must be an integer")
+
+        if custom_size < 0:
+            raise ValueError("custom_size must be >= 0")
+
         self.__size = custom_size
 
     def area(self):
