@@ -147,10 +147,10 @@ class Rectangle:
                     if not isinstance(symbol, str):
                         symbol = str(symbol)
                     string += symbol
-                rows.append(string)
+                rows.append(string + "\n")
 
             rows[-1] = rows[-1][:-1]
-            return "\n".join(rows)
+            return "".join(rows)
 
         return "" if self.__width == 0 and self.__height == 0 else _print()
 
