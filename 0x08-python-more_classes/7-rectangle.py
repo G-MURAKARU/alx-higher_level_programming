@@ -28,9 +28,9 @@ class Rectangle:
         self.__width = width
 
         if not isinstance(height, int):
-            raise TypeError("width must be an integer")
+            raise TypeError("height must be an integer")
         if height < 0:
-            raise ValueError("width must be >= 0")
+            raise ValueError("height must be >= 0")
         self.__height = height
 
         Rectangle.number_of_instances += 1
@@ -141,7 +141,7 @@ class Rectangle:
             rows: str = ""
 
             for idx in range(self.__height):
-                rows += str(Rectangle.print_symbol) * self.width
+                rows += str(Rectangle.print_symbol) * self.__width
                 if idx + 1 < self.__height:
                     rows += "\n"
 
