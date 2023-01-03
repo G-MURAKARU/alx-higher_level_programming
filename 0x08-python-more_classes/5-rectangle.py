@@ -152,4 +152,4 @@ class Rectangle:
         __del__ is called when a Rectangle instance is deleted
         """
 
-        print("Bye Rectangle...")
+        print("Bye rectangle...")
