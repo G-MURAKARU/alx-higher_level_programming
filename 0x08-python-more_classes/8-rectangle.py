@@ -143,7 +143,7 @@ class Rectangle:
             for _ in range(self.__height):
                 string: str = ""
                 for _ in range(self.__width):
-                    symbol = self.print_symbol
+                    symbol = Rectangle.print_symbol
                     if not isinstance(symbol, str):
                         symbol = str(symbol)
                     string += symbol
