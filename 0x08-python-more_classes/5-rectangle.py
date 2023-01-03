@@ -133,16 +133,14 @@ class Rectangle:
                 str: string representation of a rectangle to be printed
             """
 
-            rows: list[str] = []
+            rows: str = ""
 
-            for _ in range(self.__height):
-                string: str = ""
-                for _ in range(self.__width):
-                    string += "#"
-                rows.append(string + "\n")
+            for idx in range(self.__height):
+                rows += "#" * self.width
+                if idx + 1 < self.__height:
+                    rows += "\n"
 
-            rows[-1] = rows[-1][:-1]
-            return "".join(rows)
+            return rows
 
         return "" if self.__width == 0 and self.__height == 0 else _print()
 

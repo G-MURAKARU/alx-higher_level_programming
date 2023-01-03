@@ -125,9 +125,7 @@ class Rectangle:
             str: string representation of a rectangle
         """
 
-        rows: list[str] = []
-
-        def my_print() -> str:
+        def _print() -> str:
             """
             my_print prints a rectangle
 
@@ -135,13 +133,13 @@ class Rectangle:
                 str: string representation of a rectangle to be printed
             """
 
-            for _ in range(self.__height):
-                string: str = ""
-                for _ in range(self.__width):
-                    string += "#"
-                rows.append(string + "\n")
+            rows: str = ""
 
-            rows[-1] = rows[-1][:-1]
-            return "".join(rows)
+            for idx in range(self.__height):
+                rows += "#" * self.width
+                if idx + 1 < self.__height:
+                    rows += "\n"
 
-        return "" if self.__width == 0 or self.__height == 0 else my_print()
+            return rows
+
+        return "" if self.__width == 0 or self.__height == 0 else _print()
