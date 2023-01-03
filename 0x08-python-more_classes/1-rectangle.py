@@ -44,7 +44,7 @@ class Rectangle:
     @width.setter
     def width(self, value: int):
         """
-        width _summary_
+        width sets the provided width of the rectangle
 
         Args:
             value (int): the desired rectangle's width
@@ -76,7 +76,7 @@ class Rectangle:
     @height.setter
     def height(self, value: int):
         """
-        height _summary_
+        height sets the provided width of the rectangle
 
         Args:
             value (int): the desired rectangle's height

@@ -134,4 +134,4 @@ class Rectangle:
             rows[-1] = rows[-1][:-1]
             return "\n".join(rows)
 
-        return "" if self.__width == 0 and self.__height == 0 else my_print()
+        return "" if self.__width == 0 or self.__height == 0 else my_print()
