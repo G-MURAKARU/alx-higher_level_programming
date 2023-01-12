@@ -1,6 +1,6 @@
 #!/usr/bin/python3
 """
-    defines a function
+    Defines a function lookup
 """
 
 
