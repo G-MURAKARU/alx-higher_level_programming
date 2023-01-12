@@ -1,4 +1,7 @@
 #!/usr/bin/python3
+"""
+    defines a function
+"""
 
 
 def lookup(obj) -> list[str]:
