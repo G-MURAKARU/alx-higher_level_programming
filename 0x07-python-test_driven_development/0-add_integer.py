@@ -1,6 +1,6 @@
 #!/usr/bin/python3
 """
-    this is the ``add_integer`` module
+    this is the ``0-add_integer`` module
     the add_integer module supplies one function, add_integer().
 """
 

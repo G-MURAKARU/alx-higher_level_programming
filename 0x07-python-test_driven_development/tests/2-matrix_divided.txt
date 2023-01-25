@@ -1,0 +1,150 @@
+==============================
+How to use 2-matrix_divided.py
+==============================
+
+This module defines a function ``matrix_divided(matrix: list[list], div)`` that takes in two required arguments:
+matrix, a list of lists of integers/floating-point values, and div, an integer or a floating-point value. For example,
+
+    >>> matrix_divided = __import__("2-matrix_divided").matrix_divided
+    >>> matrix_divided([[3, 6, 9], [12, 15, 18]], 3)
+    [[1.0, 2.0, 3.0], [4.0, 5.0, 6.0]]
+
+Usage
+=====
+
+``matrix_divided(...)`` returns a new matrix of the same form as the input ``matrix`` parameter,
+but with all its elements divided by the ``div`` parameter.
+For the division, it is equivalent to using the ``/`` operator.
+
+The function handles (both positive and negative) integers, floating-point values, or a combination of the two.
+Note that quotients are rounded to a maximum of two decimal places.
+
+    >>> matrix = [
+    ...    [7, -14, 21],
+    ...    [-3.5, 4.9, 6.3],
+    ...    [9.3, 15, -12.7]
+    ... ]
+    >>> matrix_divided(matrix, 7)
+    [[1.0, -2.0, 3.0], [-0.5, 0.7, 0.9], [1.33, 2.14, -1.81]]
+
+The original matrix remains unchanged.
+
+::
+
+    >>> print(matrix)
+    [[7, -14, 21], [-3.5, 4.9, 6.3], [9.3, 15, -12.7]]
+
+The function has only two required arguments, so it will fail if any other number of arguments is passed.
+
+::
+
+    >>> matrix_divided()
+    Traceback (most recent call last):
+    TypeError: matrix_divided() missing 2 required positional arguments: 'matrix' and 'div'
+
+::
+
+    >>> matrix_divided(matrix)
+    Traceback (most recent call last):
+    TypeError: matrix_divided() missing 1 required positional argument: 'div'
+
+::
+
+    >>> matrix_divided(div=7)
+    Traceback (most recent call last):
+    TypeError: matrix_divided() missing 1 required positional argument: 'matrix'
+
+::
+
+    >>> matrix_divided(matrix, 7, 14)
+    Traceback (most recent call last):
+    TypeError: matrix_divided() takes 2 positional arguments but 3 were given
+
+Invalid Matrices
+================
+The function's ``matrix`` parameter is required to be a list of lists of integers and/or floating-point numbers.
+A TypeError is raised if any inputs that do not conform to this are passed as arguments.
+
+::
+
+    >>> matrix = "not a matrix"
+    >>> matrix_divided(matrix, 2)
+    Traceback (most recent call last):
+    TypeError: matrix must be a matrix (list of lists) of integers/floats
+
+::
+
+    >>> matrix = {"a": 1, "b": 2}
+    >>> matrix_divided(matrix, 2)
+    Traceback (most recent call last):
+    TypeError: matrix must be a matrix (list of lists) of integers/floats
+
+::
+
+    >>> matrix = None
+    >>> matrix_divided(matrix, 2)
+    Traceback (most recent call last):
+    TypeError: matrix must be a matrix (list of lists) of integers/floats
+
+::
+
+    >>> matrix = []
+    >>> matrix_divided(matrix, 2)
+    Traceback (most recent call last):
+    TypeError: matrix must be a matrix (list of lists) of integers/floats
+
+Note that a one-dimensional list of integers will raise a TypeError.
+
+::
+
+    >>> matrix = [1, 2, 3]
+    >>> matrix_divided(matrix, 2)
+    Traceback (most recent call last):
+    TypeError: matrix must be a matrix (list of lists) of integers/floats
+
+However, the function will recognise an empty list of lists as a valid argument.
+
+::
+
+    >>> matrix = [[]]
+    >>> matrix_divided(matrix, 2)
+    [[]]
+
+The function will also raise a TypeError if not all elements in the matrix are of type int or float.
+
+::
+
+    >>> matrix = [[1, 2, 3], [4, "not an int/float", 6]]
+    >>> matrix_divided(matrix, 7)
+    Traceback (most recent call last):
+    TypeError: matrix must be a matrix (list of lists) of integers/floats
+
+All rows in the matrix must be of the same length, otherwise a TypeError will be raised.
+
+::
+
+    >>> matrix = [[1, 2, 3, 4], [5, 6, 7]]
+    >>> matrix_divided(matrix, 7)
+    Traceback (most recent call last):
+    TypeError: Each row of the matrix must have the same size
+
+Invalid Divisors
+================
+
+The function accepts input arguments of the ``div`` parameter that are only of type int/float.
+Otherwise, a TypeError is raised.
+
+::
+
+    >>> matrix = [[1, 2], [3, 4]]
+    >>> matrix_divided(matrix, "not an int/float")
+    Traceback (most recent call last):
+    TypeError: div must be a number
+
+The ``div`` input argument must also be non-zero, otherwise a ZeroDivisionError is raised.
+
+::
+
+    >>> matrix_divided(matrix, 0)
+    Traceback (most recent call last):
+    ZeroDivisionError: division by zero
