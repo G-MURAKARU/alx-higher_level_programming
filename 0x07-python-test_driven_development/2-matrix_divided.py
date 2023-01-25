@@ -2,13 +2,12 @@
 
 """
     this is the ``2-matrix_divided`` module.
-    the 2-matrix_divided module supplies one function, matrix_divided(matrix: list[list[int|float]], div: int|float).
+    the 2-matrix_divided module supplies one function,
+    matrix_divided(matrix: list[list[int|float]], div: int|float).
 """
 
 
-def matrix_divided(
-    matrix: list[list[int | float]], div: int | float
-) -> list[list[int | float]]:
+def matrix_divided(matrix: list[list], div) -> list[list]:
     """
     matrix_divided divides all elements of the input ``matrix`` by the input ``div``
 
@@ -97,10 +96,10 @@ def matrix_divided(
     validate_matrix_dimensions(matrix)
     validate_matrix_elements(matrix)
 
-    new_matrix: list[list[int | float]] = []
+    new_matrix: list[list] = []
 
     for row in matrix:
-        new_row: list[int | float] = []
+        new_row: list = []
         for element in row:
             new_row.append(round(element / div, 2))
         new_matrix.append(new_row)
