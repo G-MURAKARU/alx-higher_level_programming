@@ -22,7 +22,7 @@ The second_name argument need not be provided since it is optional.
 ::
 
     >>> say_my_name("Messi")
-    My name is Messi
+    My name is Messi 
 
 Therefore, at least one and at most two arguments are passed into the function, otherwise it will fail.
 
