@@ -1,6 +1,5 @@
 #!/usr/bin/python3
 
-
 """
     this is the ``3-say_my_name`` module.
     the say_my_name module provides one function,
@@ -14,7 +13,8 @@ def say_my_name(first_name: str, second_name: str = "") -> None:
 
     Args:
         first_name (str): first name to print
-        second_name (str, optional): second name/surname to print. Defaults to "".
+        second_name (str, optional): second name/surname to print.
+                                     Defaults to "".
     """
 
     def validate_input(inpt: tuple) -> None:
