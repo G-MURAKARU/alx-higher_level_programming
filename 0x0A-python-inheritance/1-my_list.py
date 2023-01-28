@@ -16,7 +16,8 @@ class MyList(list):
 
     def __init__(self) -> None:
         """
-        __init__ initialises an instance of the class; runs initialisation the parent class
+        __init__ initialises an instance of the class;
+        runs initialisation the parent class
         """
 
         super().__init__()
