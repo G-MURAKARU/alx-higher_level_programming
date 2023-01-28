@@ -76,7 +76,7 @@ New lines within a string are printed as normal.
 
 ::
     >>> text_indentation("A sneaky \n new line.")
-    A sneaky
+    A sneaky 
     new line.
     <BLANKLINE>
 
