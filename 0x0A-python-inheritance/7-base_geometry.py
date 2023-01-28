@@ -30,7 +30,7 @@ class BaseGeometry:
             value (int): input integer
         """
 
-        if not isinstance(value, int):
+        if type(value) != int:
             raise TypeError("{} must be an integer".format(name))
 
         if value <= 0:

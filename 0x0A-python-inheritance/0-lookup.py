@@ -1,6 +1,7 @@
 #!/usr/bin/python3
 """
-    function lookup
+    this is the ``0-lookup`` module
+    this module provides one function, lookup(obj)
 """
 
 

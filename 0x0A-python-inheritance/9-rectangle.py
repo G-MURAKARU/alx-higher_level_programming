@@ -1,8 +1,8 @@
 #!/usr/bin/python3
 
 """
-    this is the ``8-rectangle`` module.
-    this module defines one class Rectangle.
+    this is the ``9-rectangle`` module.
+    this module defines one class, Rectangle.
 """
 
 BaseGeometry = __import__("7-base_geometry").BaseGeometry
@@ -27,7 +27,23 @@ class Rectangle(BaseGeometry):
 
         super().integer_validator("width", width)
         super().integer_validator("height", height)
-        print(type(height))
 
         self.__width = width
         self.__height = height
+
+    def area(self) -> int:
+        """
+        area finds the area of the rectangle
+
+        Returns:
+            int: rectangle area
+        """
+
+        return self.__width * self.__height
+
+    def __str__(self) -> None:
+        """
+        __str__ prints a rectangle
+        """
+
+        return f"[Rectangle] {str(self.__width)}/{str(self.__height)}"
