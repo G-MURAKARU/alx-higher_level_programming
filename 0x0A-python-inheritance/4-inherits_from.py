@@ -1,5 +1,10 @@
 #!/usr/bin/python3
 
+"""
+    this is the ``4-inherits_from`` module.
+    this module provides one function, inherits_from(obj, a_class)
+"""
+
 
 def inherits_from(obj, a_class) -> bool:
     """

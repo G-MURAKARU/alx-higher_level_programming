@@ -1,5 +1,10 @@
 #!/usr/bin/python3
 
+"""
+    this is the ``2-is_same_class`` module.
+    this module provides one function, is_same_class(obj, a_class)
+"""
+
 
 def is_same_class(obj, a_class) -> bool:
     """

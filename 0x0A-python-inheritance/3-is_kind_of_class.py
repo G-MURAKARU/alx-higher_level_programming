@@ -1,5 +1,10 @@
 #!/usr/bin/python3
 
+"""
+    this is the ``3-is_kind_of_class`` module.
+    this module provides one function, is_kind_of_class(obj, a_class)
+"""
+
 
 def is_kind_of_class(obj, a_class) -> bool:
     """
