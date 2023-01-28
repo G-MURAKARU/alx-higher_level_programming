@@ -17,7 +17,8 @@ def is_kind_of_class(obj, a_class) -> bool:
         a_class (_type_): possible class of obj
 
     Returns:
-        bool: whether obj is an instance of a_class or a_class's parent class(es)
+        bool: whether obj is an instance of a_class or a_class's parent
+        class(es)
     """
 
     return isinstance(obj, a_class)
