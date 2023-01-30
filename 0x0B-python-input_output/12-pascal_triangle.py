@@ -17,15 +17,13 @@ def pascal_triangle(n: int) -> list[list[int]]:
         list[list[int]]: list representation of generated triangle
     """
 
-    from copy import copy
-
     if n <= 0:
         return []
 
     triangle = [[1]]
 
     for counter in range(1, n):
-        next_row = copy(triangle[counter - 1])
+        next_row = triangle[counter - 1]
         next_row.insert(0, 0)
         next_row.append(0)
         i = 0
@@ -33,6 +31,8 @@ def pascal_triangle(n: int) -> list[list[int]]:
         while i < len(next_row) - 1:
             j.append(next_row[i] + next_row[i + 1])
             i += 1
+        next_row.pop()
+        next_row.pop(0)
         triangle.append(j)
     return triangle
 
