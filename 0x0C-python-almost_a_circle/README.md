@@ -1,4 +1,4 @@
-Python - almost a circle.
+# Python - Almost a Circle!
 
 - Unit testing and how to implement it in a large project
 - Serializing and deserializing a Class
