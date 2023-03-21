@@ -18,19 +18,34 @@ def select_states(username: str, password: str, db_name: str):
         db_name (str): MySQL database to query
     """
 
-    with MySQLdb.connect(
+    # with MySQLdb.connect(
+    #     host="localhost",
+    #     port=3306,
+    #     user=username,
+    #     password=password,
+    #     database=db_name,
+    # ) as conn:
+    #     with conn.cursor() as cursor:
+    #         cursor.execute("SELECT * FROM states ORDER BY id ASC")
+    #         states = cursor.fetchall()
+
+    conn = MySQLdb.connect(
         host="localhost",
         port=3306,
         user=username,
         password=password,
         database=db_name,
-    ) as conn:
-        with conn.cursor() as cursor:
-            cursor.execute("SELECT * FROM states ORDER BY id ASC")
-            states = cursor.fetchall()
+    )
+    cur = conn.cursor()
+
+    cur.execute("SELECT * FROM states ORDER BY id ASC")
+    states = cur.fetchall()
 
     for state in states:
         print(state)
+
+    cur.close()
+    conn.close()
 
 
 if __name__ == "__main__":
