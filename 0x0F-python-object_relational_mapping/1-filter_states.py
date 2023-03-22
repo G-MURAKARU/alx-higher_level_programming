@@ -1,16 +1,17 @@
 #!/usr/bin/python3
 
 """
-    this is the ``0-select_states`` module.
-    this module provides one function, select_states().
+    this is the ``1-filter_states`` module.
+    this module provides one function, filter_states().
 """
 
 import MySQLdb
 
 
-def select_states(username: str, password: str, db_name: str) -> None:
+def filter_states(username: str, password: str, db_name: str) -> None:
     """
-    select_states lists all state entries contained in database `db_name`
+    filter_states lists all state entries that begin with 'N' contained in
+    database `db_name`
 
     Args:
         username (str): MySQL server username
@@ -27,7 +28,9 @@ def select_states(username: str, password: str, db_name: str) -> None:
     )
     cur = conn.cursor()
 
-    cur.execute("SELECT * FROM states ORDER BY id ASC")
+    cur.execute(
+        "SELECT * FROM states WHERE name LIKE BINARY 'N%' ORDER BY id ASC"
+    )
     states = cur.fetchall()
 
     for state in states:
@@ -42,4 +45,4 @@ if __name__ == "__main__":
 
     args = sys.argv[1:]
     name, passwd, db = args
-    select_states(name, passwd, db)
+    filter_states(name, passwd, db)
